@@ -1,0 +1,12 @@
+<#@ template  language="C#" debug="true" hostSpecific="true" #>
+<#@ output extension=".ReadMe" #>
+<#@ Assembly Name="IdeaBlade.VisualStudio.OM.CodeGenerator.11.0.dll" #>
+<#@ import namespace="IdeaBlade.VisualStudio.OM.CodeGenerator" #>
+<#
+	// Source for this file located at: C:\USERS\KIM\APPDATA\LOCAL\MICROSOFT\VISUALSTUDIO\11.0\EXTENSIONS\VW44OCHH.R2L\DomainModelTemplate.tt
+	// NorthwindIB.edmx  <--- This is needed so that "Transform Related Text Templates On Save" works correctly.
+	var template = new DomainModelTemplate(this);
+	template.Generate();
+#>
+<#+ 
+#>

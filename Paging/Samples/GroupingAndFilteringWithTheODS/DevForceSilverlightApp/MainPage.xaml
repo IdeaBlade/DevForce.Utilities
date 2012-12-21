@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="DevForceSilverlightApp.MainPage" 
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+		xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data" 
+		xmlns:ib="clr-namespace:IdeaBlade.Windows;assembly=IdeaBlade.Windows.SL"  
+		xmlns:em="clr-namespace:DevForceSilverlightApp"                           
+		Width="Auto" Height="Auto">
+		
+		<Grid x:Name="LayoutRoot" Margin="20,20,20,20" >
+				
+				<StackPanel Orientation="Vertical">
+
+						<!--
+							Setup an ObjectDataSource - page size is 20, lookahead 1 page, autoload on.
+							The "Customers" query on the EntityManager will be the data source.
+							A new DomainModelEntityManager is created, connected and logged in (with
+							null credentials).  
+							See documentation for other ways of setting QueryName and choosing an EntityManager.            
+							Default sort is by CompanyName, default grouping is by Country.
+							Filtering is by ContactName.
+							DataGrid and DataPager bind to Data property ofthe ODS.
+						-->
+						<ib:ObjectDataSource x:Name="_customersDataSource" 
+								PageSize="20"                                 
+								LoadSize="40" 
+								AutoLoad="True"
+								QueryName="Customers"
+								>
+								<ib:ObjectDataSource.EntityManager>
+										<em:NorthwindIBEntities 
+												 EntityServerError="EM_EntityServerError"
+												 Querying="EM_Querying"
+												>
+										</em:NorthwindIBEntities>
+								</ib:ObjectDataSource.EntityManager>
+								
+								<ib:ObjectDataSource.SortDescriptors>
+										<ib:SortDescriptor  PropertyPath="CompanyName" Direction="Ascending" />
+								</ib:ObjectDataSource.SortDescriptors>
+
+								<ib:ObjectDataSource.GroupDescriptors>
+										<ib:GroupDescriptor PropertyPath="Country" />
+								</ib:ObjectDataSource.GroupDescriptors>
+
+								<ib:ObjectDataSource.FilterDescriptors>
+										<ib:FilterDescriptor PropertyPath="ContactName"
+																				 Operator="StartsWith">
+												<ib:ControlParameter PropertyName="Text" 
+																						 RefreshEventName="TextChanged"
+																						 ControlName="_contactFilterBox" />
+										</ib:FilterDescriptor>
+								</ib:ObjectDataSource.FilterDescriptors>
+						</ib:ObjectDataSource>
+
+						<TextBlock x:Name="_layoutRootTitleTextBlock"
+								FontWeight="Bold" 
+								FontSize="20"
+								VerticalAlignment="Center" 
+								Foreground="#FF000000"
+								Text="Customers" />
+
+						<StackPanel Orientation="Horizontal" Margin="0,0,0,10" VerticalAlignment="Center">
+								<TextBlock Text="Filter by Contact Name: "  VerticalAlignment="Center"/>
+								<TextBox  x:Name="_contactFilterBox" Width="200" Height="30" />
+						</StackPanel>
+
+						<data:DataGrid x:Name="_customersDataGrid"
+								HorizontalAlignment="Left" 
+						    VerticalAlignment="Top" 
+						    AutoGenerateColumns="True"
+								MinWidth="600"
+								Height="500"
+						    Background="#FFB5BAB5"
+						    Margin="0,0,20,0"
+								IsReadOnly="True"
+								ItemsSource="{Binding Data, ElementName=_customersDataSource}" />
+
+						<data:DataPager x:Name="_dataPager"
+								DisplayMode="FirstLastPreviousNext"
+								Margin="0,10,0,10" 
+								HorizontalAlignment="Center" 
+								NumericButtonCount="3" 
+								AutoEllipsis="True" 
+								PageSize="20"
+								IsTotalItemCountFixed="True" 
+								Source="{Binding Data, ElementName=_customersDataSource}" />
+
+						<ScrollViewer x:Name="_statusMsg_ScrollViewer" 
+					      Height="60" 
+								Margin="0,0,20,0" >
+								<TextBlock x:Name="_statusTextBlock" />
+						</ScrollViewer>
+
+				</StackPanel>
+		</Grid>
+
+</UserControl>
