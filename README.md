@@ -22,3 +22,12 @@ A Fiddler extension to inspect network traffic in an n-tier DevForce application
 Can be used with any version of DevForce.
 
 See http://drc.ideablade.com/xwiki/bin/view/Documentation/fiddler for additional information.
+
+
+DevForceLINQPadDriver
+---------------------
+A LINQPad driver which allows you to use LINQPad with a DevForce model.
+
+Can be used with any version of DevForce.  If using DevForce 2012, make sure that all required server assemblies are available in the bin folder where the model assembly is located.
+
+See http://drc.ideablade.com/xwiki/bin/view/Documentation/linqpad-driver for additional information.

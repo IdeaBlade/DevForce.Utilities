@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataContextDriver>
+   <MainAssembly>DevForceLINQPadDriver.dll</MainAssembly>
+   <SupportUri>http://www.ideablade.com</SupportUri>
+  <AllowAssemblyShadowing>false</AllowAssemblyShadowing>
+</DataContextDriver>
