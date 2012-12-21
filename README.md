@@ -15,3 +15,10 @@ Samples -
  - EditingWithTheODS - How to save and reject changes with the ObjectDataSource.
 
 
+DevForceFiddlerExtension
+------------------------
+A Fiddler extension to inspect network traffic in an n-tier DevForce application.
+
+Can be used with any version of DevForce.
+
+See http://drc.ideablade.com/xwiki/bin/view/Documentation/fiddler for additional information.
