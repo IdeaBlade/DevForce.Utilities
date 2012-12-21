@@ -31,3 +31,8 @@ A LINQPad driver which allows you to use LINQPad with a DevForce model.
 Can be used with any version of DevForce.  If using DevForce 2012, make sure that all required server assemblies are available in the bin folder where the model assembly is located.
 
 See http://drc.ideablade.com/xwiki/bin/view/Documentation/linqpad-driver for additional information.
+
+
+WinTraceViewer
+--------------
+The Windows Forms version of the Trace Viewer utility for DevForce 2012 applications.
