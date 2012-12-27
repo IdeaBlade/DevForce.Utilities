@@ -2,6 +2,25 @@ DevForce.Utilities
 ==================
 A collection of DevForce-related utilities.
 
+
+DevForceFiddlerExtension
+------------------------
+A Fiddler extension to inspect network traffic in an n-tier DevForce application.
+
+Can be used with any version of DevForce.
+
+See http://drc.ideablade.com/devforce-2012/bin/view/Documentation/fiddler for additional information.
+
+
+DevForceLINQPadDriver
+---------------------
+A LINQPad driver which allows you to use LINQPad with a DevForce model.
+
+Can be used with any version of DevForce.  If using DevForce 2012, make sure that all required server assemblies are available in the bin folder where the model assembly is located.
+
+See http://drc.ideablade.com/devforce-2012/bin/view/Documentation/linqpad-driver for additional information.
+
+
 Paging
 ------
 Contains the EntityQueryPagedCollectionView and ObjectDataSource for paging, grouping, sorting and filtering in Silverlight applications written in DevForce 2012.  
@@ -14,25 +33,11 @@ Samples -
  - GroupingAndFilteringWithTheODS - How to add grouping and filtering to an ObjectDataSource.
  - EditingWithTheODS - How to save and reject changes with the ObjectDataSource.
 
-
-DevForceFiddlerExtension
-------------------------
-A Fiddler extension to inspect network traffic in an n-tier DevForce application.
-
-Can be used with any version of DevForce.
-
-See http://drc.ideablade.com/xwiki/bin/view/Documentation/fiddler for additional information.
-
-
-DevForceLINQPadDriver
----------------------
-A LINQPad driver which allows you to use LINQPad with a DevForce model.
-
-Can be used with any version of DevForce.  If using DevForce 2012, make sure that all required server assemblies are available in the bin folder where the model assembly is located.
-
-See http://drc.ideablade.com/xwiki/bin/view/Documentation/linqpad-driver for additional information.
+Documentation on the DevForce 2010 version of these samples is available here: http://drc.ideablade.com/xwiki/bin/view/Documentation/code-samples-display.
 
 
 WinTraceViewer
 --------------
-The Windows Forms version of the Trace Viewer utility for DevForce 2012 applications.
+The Windows Forms version of the Trace Viewer utility for DevForce 2012 applications.  
+
+See http://drc.ideablade.com/devforce-2012/bin/view/Documentation/traceviewer for additional information.
